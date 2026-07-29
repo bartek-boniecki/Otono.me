@@ -148,11 +148,43 @@ section{padding:104px 0}
 .pcard .pid{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .pcard .pid .rec-tag{color:var(--ink);font-weight:600}
 .pcard h3{font-size:26px;font-weight:800;margin:10px 0 8px}
-.pcard .pdesc{font-size:15px;margin-bottom:22px}
+.pcard .pdesc{font-size:15px;margin-bottom:0}
 .pcard .amount{ display:flex; flex-direction:column; justify-content:flex-end; min-height:118px; margin-bottom:4px; }
-.pcard .amount .fig{ font-family:var(--disp); font-weight:800; font-size:48px; line-height:1.05; color:var(--ink); letter-spacing:-.03em; white-space:nowrap; }
-.pcard .amount .qual{ font-size:19px; font-weight:500; line-height:1.35; color:var(--muted); margin-top:8px; }
-.pcard .amount .fine{ font-family:var(--mono); font-size:12.5px; font-weight:400; line-height:1.4; color:var(--muted); letter-spacing:.02em; margin-top:10px; }
+
+/* price block */
+.pcard .amount{
+  margin-top:32px;      /* breathing room above the price */
+  margin-bottom:8px;
+}
+
+.pcard .amount .fig{
+  font-family:var(--disp);
+  font-weight:800;
+  font-size:48px;
+  line-height:1;
+  letter-spacing:-.03em;
+  color:var(--ink);
+}
+
+.pcard .amount .qual{
+  font-size:17px;
+  font-weight:500;
+  line-height:1.4;
+  color:#334155;              /* darker than --muted */
+  margin-top:12px;
+  min-height:47.6px;          /* 2 lines — locks the slot */
+}
+
+.pcard .amount .fine{
+  font-family:var(--mono);
+  font-size:12.5px;
+  line-height:1.5;
+  letter-spacing:.02em;
+  color:var(--muted);
+  margin-top:12px;
+  min-height:37.5px;          /* 2 lines */
+}
+
 .pcard ul{margin:24px 0;flex:1}
 .pcard li{list-style:none;font-size:14.5px;padding:8px 0 8px 26px;position:relative;border-bottom:1px dashed var(--line)}
 .pcard li::before{content:"✓";position:absolute;left:0;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -204,10 +236,10 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
   section{padding:72px 0}
   .final{padding:52px 28px}
   .price{grid-template-columns:1fr}
-  .pcard{padding:28px}
-  .pcard .amount{min-height:0}
-  .pcard .amount .fig{font-size:38px;white-space:normal}
-  .pcard .amount .qual{font-size:17px}
+  .pcard .amount{margin-top:26px}
+  .pcard .amount .fig{font-size:38px}
+  .pcard .amount .qual{font-size:16px;min-height:0}
+  .pcard .amount .fine{min-height:0}
 }
 </style>
 </head>
@@ -286,14 +318,14 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
       <div class="dcard">
         <div class="num">01</div>
         <h3>Attribution</h3>
-        <p>Per-feature, per-customer, per-environment cost telemetry wired into your existing gateway. Every dollar gets an owner.</p>
+        <p>Per-feature, per-customer, per-environment cost telemetry wired into your existing gateway. Every dollar gets an owner. Wired in first because nothing after it is measurable.</p>
         <span class="save">foundational</span>
       </div>
       <div class="dcard">
         <div class="num">02</div>
         <h3>Prompt &amp; token optimization</h3>
-        <p>Three tactics, no architecture change: <br>Prompt caching: RAG templates, system prompts, tool schemas <br>Token optimization: verbose prompts &amp; outputs, doc workflows <br>Semantic caching: support bots, FAQ, product Q&A</p>
-        <span class="save">up to 90% off cached input</span>
+        <p>Three tactics, no architecture change: <br>Prompt caching: repeated prefixes, RAG templates, tool schemas<br>Token optimization: verbose prompts and outputs, doc workflows<br>Semantic caching: support bots, FAQ, product Q&A</p>
+        <span class="save">30–60% on repeat-heavy traffic</span>
       </div>
       <div class="dcard">
         <div class="num">03</div>
@@ -496,7 +528,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
           <li>runbooks, on-call docs, 30-day check-in</li>
         </ul>
         <p class="note">you pay when you earn</p>
-        <a href="#final" class="btn btn-grad">Start with an audit</a>
+        <a href="#final" class="btn btn-grad">See if we'd take this on</a>
       </div>
     </div>
   </div>
