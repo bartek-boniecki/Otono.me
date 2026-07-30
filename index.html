@@ -418,17 +418,17 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;margin-top:104px}
     <div class="proc">
       <div class="step rv">
         <h3>Week 1 · We find out where the money goes</h3>
-        <p>Read-only access to your provider billing exports and your gateway configuration. Every model call gets mapped to a feature, a customer cohort and an environment. Your starting position is then frozen: cost per request, tokens per call, calls per feature. You also set the quality pass mark for each part of the product here, before we change anything.</p>
+        <p>Read-only access to your provider billing exports and your gateway configuration. Every model call that passes through your gateway is tagged to a feature, an environment and, where there is one, a customer. Anything the tagging cannot reach is flagged rather than smoothed over. Your starting position is then frozen: cost per request, tokens per call, calls per feature. You also set the quality pass mark for each part of the product here.</p>
         <div class="ref"><span class="arr">You keep</span> <b>a frozen baseline and a cost dashboard</b> · built from <a href="https://github.com/basis-finops" rel="noopener">our public audit checklist</a></div>
       </div>
       <div class="step rv">
         <h3>Week 2 · The three biggest leaks, written down and ranked</h3>
-        <p>A short written diagnosis: where the spend is, how much of it is recoverable, what the fix is, and what it costs to do. Ranked by return per engineering day, so you can fund the top item and ignore the rest if you want. If nothing on the list is worth doing, that is the finding and we say so in writing.</p>
-        <div class="ref"><span class="arr">You keep</span> <b>the diagnosis memo</b> · priced against our weekly per-provider price tracker</div>
+        <p>A short written diagnosis: where the spend is, how much is recoverable, what the fix is, and what it costs to do. Ranked by return per engineering day, so you can fund the top item and ignore the rest. Whatever week one could not attribute is explained here, and calls bypassing your gateway altogether are among the most common things we find. That one is often worth more than the first optimisation. If nothing on the list is worth doing, that is the finding and we say so in writing.</p>
+        <div class="ref"><span class="arr">You keep</span> <b>the diagnosis memo</b> · every figure costed at current prices, re-checked weekly</div>
       </div>
       <div class="step rv">
         <h3>Weeks 2 to 5 · The safe cuts ship</h3>
-        <p>Caching, batching and routing land as pull requests in your repository, reviewed by your engineers and merged on your schedule. The automated quality tests run before and after every change. Anything that cannot hold its pass mark does not ship, and the saving it would have produced is never counted.</p>
+        <p>Token discipline goes first: fewer tokens to cache, fewer to route, smaller bills on the models you keep. Then caching, batching and routing, landing as pull requests in your repository, reviewed by your engineers and merged on your schedule. The quality tests run before and after every change. Anything that cannot hold its pass mark does not ship, and the saving it would have produced is never counted.</p>
         <div class="ref"><span class="arr">You keep</span> <b>the routing layer, cache configuration and quality test suite</b></div>
       </div>
       <div class="step rv">
