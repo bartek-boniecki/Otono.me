@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>basis — AI FinOps. Cut AI run-rate 20–50%, pay on results.</title>
+<title>basis - AI FinOps. Cut AI run-rate 20–50%, pay on results.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-f
 .hero .sub b{color:var(--ink);font-weight:600}
 .hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
 
-/* stat trio — framed by the deck's rounded bracket */
+/* stat trio - framed by the deck's rounded bracket */
 .trio{margin:72px 0 0;border-left:5px solid transparent;border-image:var(--grad-v) 1;padding-left:0;display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative}
 .trio::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--grad-v)}
 .trio .cell{padding:30px 32px;border-right:1px solid var(--line)}
@@ -150,7 +150,7 @@ section{padding:104px 0}
 .pcard h3{font-size:26px;font-weight:800;margin:10px 0 8px}
 .pcard .pdesc{font-size:15px;line-height:1.6;margin:0;min-height:48px}   /* 2 lines, locked */
 
-/* price block — one rule only */
+/* price block - one rule only */
 .pcard .amount{margin:30px 0 0}
 
 .pcard .amount .fig{
@@ -168,7 +168,7 @@ section{padding:104px 0}
   line-height:1.4;
   color:#334155;              /* darker than --muted */
   margin-top:12px;
-  min-height:48px;            /* 2 lines — locks the slot */
+  min-height:48px;            /* 2 lines - locks the slot */
 }
 
 .pcard .amount .fine{
@@ -339,13 +339,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
       <div class="dcard">
         <div class="num">03</div>
         <h3>Model routing &amp; rightsizing</h3>
-        <p>For high-volume workflows with clear task families — extraction, routing, classification, style rewrite, scoring. Most of that traffic doesn't need a frontier model. We map the families, build the routing layer, and verify quality per route with evals.</p>
+        <p>For high-volume workflows with clear task families - extraction, routing, classification, style rewrite, scoring. Most of that traffic doesn't need a frontier model. We map the families, build the routing layer, and verify quality per route with evals.</p>
         <span class="save">40–85% on routed</span>
       </div>
       <div class="dcard">
         <div class="num">04</div>
         <h3>Fine-tuned task models</h3>
-        <p>For high-volume narrow tasks — extraction, classification, structured output. Eval design, training, deployment. We don't propose this when it doesn't pay back.</p>
+        <p>For high-volume narrow tasks - extraction, classification, structured output. Eval design, training, deployment. We don't propose this when it doesn't pay back.</p>
         <span class="save">70–90% on targeted workload</span>
       </div>
     </div>
@@ -360,7 +360,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
     <div class="sec-head rv">
       <span class="eyebrow">Process</span>
       <h2>How a Sprint runs.</h2>
-      <p>Eight weeks, fixed scope. Every phase ties to a public artifact — nothing about the method is proprietary.</p>
+      <p>Eight weeks, fixed scope. Every phase ties to a public artifact - nothing about the method is proprietary.</p>
     </div>
     <div class="proc">
       <div class="step rv">
@@ -379,7 +379,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
         <div class="ref"><span class="arr">→ reference</span> <b>past teardowns</b> · typical fix patterns</div>
       </div>
       <div class="step rv">
-        <h3>4 · Task model trained — if it pays back.</h3>
+        <h3>4 · Task model trained - if it pays back.</h3>
         <p>Only when routing surfaced a workload with both volume and a narrow task definition. Often skipped. We're honest when this isn't the right move.</p>
         <div class="ref"><span class="arr">→ verified by</span> <b>eval suite in CI</b> · your team, going forward</div>
       </div>
@@ -589,13 +589,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
       <div class="faq-group">getting started</div>
 
       <details>
-        <summary>We tried this internally for two weeks and gave up. What&#39;s different?<span class="pm">+</span></summary>
-        <p class="ans">Internal attempts stall at attribution — the gateway isn&#39;t emitting per-feature telemetry, so every optimization is a guess. We arrive with the instrumentation checklist, a per-provider price tracker, and an eval harness already built. Your engineers keep shipping product; we do the part that never survives sprint planning.</p>
-      </details>
-
-      <details>
         <summary>How much of our team&#39;s time does this take?<span class="pm">+</span></summary>
-        <p class="ans">Read access to billing and your gateway config in week 1, then roughly two hours a week from one engineer for context and review. Changes go through your normal PR process — we don&#39;t get commit rights unless you want us to. The Sprint is designed on the assumption that nobody on your side has spare capacity.</p>
+        <p class="ans">Read access to billing and your gateway config in week 1, then roughly two hours a week from one engineer for context and review. Changes go through your normal PR process - we don&#39;t get commit rights unless you want us to. The Sprint is designed on the assumption that nobody on your side has spare capacity.</p>
       </details>
 
       <details>
@@ -607,7 +602,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
 
       <details>
         <summary>How do we know the savings are real and not just moved around?<span class="pm">+</span></summary>
-        <p class="ans">The baseline is frozen in week 1 from your own billing data, per route, with traffic volume held constant in the model. Every saving in the final report is reproducible from your provider invoices — not from our dashboard. If a number can&#39;t be recomputed by your finance team, it doesn&#39;t count.</p>
+        <p class="ans">The baseline is frozen in week 1 from your own billing data, per route, with traffic volume held constant in the model. Every saving in the final report is reproducible from your provider invoices - not from our dashboard. If a number can&#39;t be recomputed by your finance team, it doesn&#39;t count.</p>
       </details>
 
       <details>
@@ -617,22 +612,22 @@ footer{border-top:1px solid var(--line);padding:34px 0;margin-top:104px}
 
       <details>
         <summary>How exactly does the 25% get invoiced?<span class="pm">+</span></summary>
-        <p class="ans">Measured against the frozen week-1 baseline in your own provider invoices, and billed quarterly as savings actually land — not as a lump sum against a projection. Capped at $60k. If savings stop, invoicing stops. If a saving reverses because you switch providers or your traffic mix shifts, it comes out of the count.</p>
+        <p class="ans">Measured against the frozen week-1 baseline in your own provider invoices, and billed quarterly as savings actually land - not as a lump sum against a projection. Capped at $60k. If savings stop, invoicing stops. If a saving reverses because you switch providers or your traffic mix shifts, it comes out of the count.</p>
       </details>
 
       <details>
         <summary>Why not just use a gateway or a cost-tracking tool?<span class="pm">+</span></summary>
-        <p class="ans">Use one — several are good, and we wire into whatever you already have. Tools show you the bill. They don&#39;t decide which task families can move to a smaller model, build the eval harness that proves it&#39;s safe, or restructure a prompt cache around your RAG templates. The tool is the dashboard. This is the work.</p>
+        <p class="ans">Use one - several are good, and we wire into whatever you already have. Tools show you the bill. They don&#39;t decide which task families can move to a smaller model, build the eval harness that proves it&#39;s safe, or restructure a prompt cache around your RAG templates. The tool is the dashboard. This is the work.</p>
       </details>
 
       <details>
         <summary>Our spend is &quot;only&quot; $10–20k/month. Is this worth it?<span class="pm">+</span></summary>
-        <p class="ans">At $12k/month, a mid-range 35% cut is roughly $50k a year — you keep about $38k of it and we invoice around $12k, spread across four quarters. If the audit projects less than that, we say so in writing and stop there. That&#39;s exactly what the free audit is for.</p>
+        <p class="ans">At $12k/month, a mid-range 35% cut is roughly $50k a year - you keep about $38k of it and we invoice around $12k, spread across four quarters. If the audit projects less than that, we say so in writing and stop there. That&#39;s exactly what the free audit is for.</p>
       </details>
 
       <details>
         <summary>What happens when you leave?<span class="pm">+</span></summary>
-        <p class="ans">Everything lives in your repo and your tools: dashboards, routing code, cache config, runbooks, and the eval suite in CI. Nothing of ours runs in your stack and there&#39;s no license to renew. A 30-day check-in is included; after that your team extends the work — that&#39;s the design goal, not a concession.</p>
+        <p class="ans">Everything lives in your repo and your tools: dashboards, routing code, cache config, runbooks, and the eval suite in CI. Nothing of ours runs in your stack and there&#39;s no license to renew. A 30-day check-in is included; after that your team extends the work - that&#39;s the design goal, not a concession.</p>
       </details>
 
     </div>
