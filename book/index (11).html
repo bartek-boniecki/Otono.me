@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book the free audit · Otono.me</title>
+<meta name="description" content="Book a 30-minute call. Read-only access, a written diagnosis of where your AI model spend is going, and no obligation to continue.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Book the free audit · Otono.me">
+<meta property="og:description" content="Thirty minutes, read-only access, and a written read on where your AI spend is going.">
+<meta property="og:url" content="https://basis-finops.com/book">
+<link rel="canonical" href="https://basis-finops.com/book">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a12;
+  --body:#3d4152;
+  --muted:#5c6172;
+  --line:#e7e9f1;
+  --paper:#ffffff;
+  --panel:#f6f7fb;
+  --violet:#6c2bee;
+  --cyan:#00a7ff;
+  --grad:linear-gradient(90deg,#6c2bee 0%,#2f6bff 55%,#00a7ff 100%);
+  --grad-v:linear-gradient(180deg,#6c2bee,#00a7ff);
+  --mono:'IBM Plex Mono',monospace;
+  --disp:'Manrope',sans-serif;
+  --sans:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--body);background:var(--paper);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:#6c2bee;color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--disp);color:var(--ink);letter-spacing:-0.02em}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:var(--ink);padding:12px 18px;z-index:200;font-weight:600}
+.skip:focus{left:16px;top:12px}
+.g{color:var(--violet);background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:9px;height:9px;background:var(--grad);display:inline-block;border-radius:2px;flex:none}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:var(--disp);font-weight:800;font-size:21px;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--violet)}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;text-decoration:none;color:var(--body)}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:700;font-size:15px;text-decoration:none;border-radius:8px;padding:12px 22px;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer;border:none}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-sm{padding:9px 16px;font-size:14px}
+
+/* booking layout */
+.book-head{padding:64px 0 40px}
+.book-head h1{font-size:clamp(32px,4.2vw,48px);font-weight:800;line-height:1.1;max-width:20ch;margin:16px 0 18px}
+.book-head p{font-size:17.5px;max-width:60ch;line-height:1.65}
+.book-head p b{color:var(--ink);font-weight:600}
+
+.book-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:40px;align-items:start;padding-bottom:104px}
+
+/* the calendar column */
+.cal{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;position:relative}
+.cal::before{content:"";position:absolute;inset:0 auto 0 0;width:5px;background:var(--grad-v);z-index:2}
+.cal-inner{padding:8px 8px 8px 13px;min-height:660px}
+.cal-inner iframe{border:0;width:100%;min-height:640px;display:block}
+.cal-fallback{margin-top:16px;font-family:var(--mono);font-size:12.5px;color:var(--muted);line-height:1.7}
+.cal-fallback a{color:var(--violet);text-underline-offset:3px}
+
+
+/* reassurance column */
+.aside{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:32px}
+.aside h2{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:18px}
+.aside ul{list-style:none;display:flex;flex-direction:column;gap:18px}
+.aside li{font-size:14.5px;line-height:1.65;padding-left:20px;position:relative}
+.aside li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;background:var(--grad)}
+.aside li b{color:var(--ink);font-weight:600;display:block;font-family:var(--disp);font-size:15px;margin-bottom:2px}
+.aside .rule{height:1px;background:var(--line);margin:26px 0}
+.aside .alt{font-size:14px;line-height:1.7}
+.aside .alt a{color:var(--violet);text-underline-offset:3px}
+
+footer{border-top:1px solid var(--line);padding:44px 0 34px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.foot-grid h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:12px}
+.foot-grid p,.foot-grid a{font-size:14px;line-height:1.7;color:var(--body);text-decoration:none;display:block}
+.foot-grid a:hover{color:var(--ink);text-decoration:underline}
+.foot-bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:24px}
+
+@media(max-width:900px){
+  .wrap{padding:0 20px}
+  .nav-links a:not(.btn){display:none}
+  .book-grid{grid-template-columns:1fr;gap:28px}
+  .book-head{padding:44px 0 28px}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="/">Otono<b>.me</b></a>
+    <div class="nav-links">
+      <a href="/#deliverables">What you get</a>
+      <a href="/#process">Process</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/" class="btn btn-ghost btn-sm">Back to site</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="wrap">
+
+    <div class="book-head">
+      <span class="eyebrow">Spend leak audit · no cost</span>
+      <h1>Pick a time. <span class="g">The diagnosis is yours either way.</span></h1>
+      <p>Thirty minutes, read-only access, and a written read on where your AI spend is going. <b>You keep the written diagnosis whether or not you ever hire us.</b></p>
+    </div>
+
+    <div class="book-grid">
+
+      <!-- =================================================================
+           CALENDAR COLUMN
+           Live Google Calendar booking page.
+           If you ever change scheduler, replace the <iframe> below and the
+           fallback link underneath it. Keep everything else as it is.
+           ================================================================= -->
+      <div>
+        <div class="cal">
+          <div class="cal-inner">
+
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2odoTDwWaZScMgwsfqpDhP-vyYk5EeeCrH-7WSMS9hQlRicszkCSoAzoziZLNyIVAMvf7m7uz7?gv=true"
+                    style="border: 0" width="100%" height="600" frameborder="0"
+                    title="Book the free audit with Otono.me"></iframe>
+
+          </div>
+        </div>
+
+        <!-- Always keep this. If the embed fails to load, this is the escape hatch. -->
+        <p class="cal-fallback">
+          Calendar not loading? <a href="https://calendar.app.google/uFNnwz4SHiUvdVkj9" rel="noopener">Open the booking page directly</a>
+          or email <a href="mailto:hello@basis-finops.com">hello@basis-finops.com</a> with two or three times that suit you.
+        </p>
+      </div>
+
+      <!-- REASSURANCE COLUMN -->
+      <aside class="aside">
+        <h2>What happens on the call</h2>
+        <ul>
+          <li><b>You talk, we listen</b>Which AI features you run, roughly what you spend, and which numbers your finance team already trusts.</li>
+          <li><b>We ask for read-only access</b>Billing exports and gateway configuration. No production data or customer content leaves your environment.</li>
+          <li><b>You get it in writing</b>A written diagnosis ranking the three largest recoverable leaks, sent after the call. Yours to keep and act on alone.</li>
+          <li><b>No card, no obligation</b>There is no fee unless your own finance team signs off on a verified saving later.</li>
+        </ul>
+        <div class="rule"></div>
+        <p class="alt">Spending under about $5k a month on model usage? We would decline the engagement, so book anyway only if you want the written read — or just <a href="mailto:hello@basis-finops.com">email us</a> and we will tell you straight.</p>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Otono.me</h4>
+        <p>We reduce what AI features cost to run, and prove it in your own provider invoices. Cost attribution first, then caching, routing and purpose-built models. Also known as AI FinOps.</p>
+        <p style="margin-top:14px;color:var(--muted)">Registered entity, company number and address to be added here.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/#deliverables">What you get</a>
+        <a href="/#process">Process</a>
+        <a href="/#pricing">Pricing and terms</a>
+        <a href="/#fit">Fit</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div>
+        <h4>Contact and legal</h4>
+        <a href="mailto:hello@basis-finops.com">hello@basis-finops.com</a>
+        <a href="https://github.com/basis-finops" rel="noopener">Methodology repository</a>
+        <a href="/privacy">Privacy policy</a>
+        <a href="/terms">Terms</a>
+        <a href="/dpa">Data processing addendum</a>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Otono.me</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
